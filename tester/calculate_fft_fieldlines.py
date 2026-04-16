@@ -249,6 +249,7 @@ def convert_to_cylindrical(file_path):
 
 # Example usage with your file: -> looks like here is where we change
 
+# there is a script that has data for R and Z (use an analytical expression which are known functions)
 file_path = r"/Users/copernic/Documents/fourier-trans/trajectory_r=0.40_corrected.txt"
 
 # cylindrical_coordinates_data = convert_to_cylindrical(file_path)
@@ -278,6 +279,9 @@ print("--- Analyzing Z(ζ) Coordinate ---")
 # Use a sufficiently large lambda to get narrow peaks for this non-chaotic line
 z_analysis_results = analyser.find_modes(coordinate='Z', lambda_width=150.0)    # CHANGING LAMBDA HERE
                                                                                 # higher lamba makes width of peaks smaller but too high makes it detect more peaks than exist
+# take this loop and put it in an optimization loop that takes the value of lamba 
+# and ensure sharp peaks can you find lambda with sharp peaks
+# script for changing the lambda
 
 # Print the detected peak locations and their amplitudes
 print(f"Detected Z Frequencies (ω): {np.round(z_analysis_results['peak_omegas'], 3)}")
